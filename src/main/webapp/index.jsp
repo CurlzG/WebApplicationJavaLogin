@@ -18,6 +18,15 @@
 <div style="padding:20px">
 <input type="submit" value="Login" name="Login" class="input-del">
 </div>
+<% if(request.getAttribute("allowed") != null){ %>
+<%boolean allow = (boolean)request.getAttribute("allowed"); %>
+<%if(allow){ %>
+<p> <b> Allowed </b> </p>
+<% } else if(!allow) { %>
+<p> <b> Not Allowed </b> </p>
+<% } else { %>
+<p>  </p>
+<% }} %>
 </form>
 </div>
 

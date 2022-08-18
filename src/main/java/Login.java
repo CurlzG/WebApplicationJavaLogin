@@ -34,7 +34,8 @@ public class Login extends HttpServlet {
 			mysql querys = new mysql();
 			String lastname = request.getParameter("LastName");
 			String Password = request.getParameter("Password");
-			querys.Login(lastname, Password);
+			boolean allowed = querys.Login(lastname, Password);
+			request.setAttribute("allowed", allowed);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
